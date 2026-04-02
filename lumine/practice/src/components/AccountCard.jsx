@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LOT_IMAGES } from '../utils/lotImages';
+import { Gem, Globe, Sparkles, XCircle } from 'lucide-react';
 
 const formatPrice = (price) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
@@ -30,11 +31,11 @@ const AccountCard = ({ account }) => {
           />
         ) : (
           <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #1a0a2e 0%, #0f172a 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ fontSize: '32px' }}>💎 {formatNum(denomination)}</span>
+            <span style={{ fontSize: '32px', display: 'flex', alignItems: 'center', gap: '8px' }}><Gem size={32} /> {formatNum(denomination)}</span>
           </div>
         )}
         <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(13,18,32,0.85)', backdropFilter: 'blur(6px)', padding: '5px 12px', borderRadius: 'var(--radius-full)', fontSize: '11px', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid rgba(255,255,255,0.08)', letterSpacing: '0.05em' }}>
-          <span style={{ fontSize: '11px', filter: 'brightness(1.5)' }}>🌐</span> {server}
+          <span style={{ filter: 'brightness(1.5)', display: 'flex', alignItems: 'center' }}><Globe size={13} /></span> {server}
         </div>
       </div>
 
@@ -42,12 +43,12 @@ const AccountCard = ({ account }) => {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '14px', color: 'var(--color-text-muted)', fontWeight: 500 }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ color: 'var(--color-primary-light)', fontSize: '16px' }}>💎</span>
+            <span style={{ color: 'var(--color-primary-light)', display: 'flex', alignItems: 'center' }}><Gem size={16} /></span>
             <strong style={{ color: 'var(--color-text)' }}>{formatNum(primogems)}</strong>
           </span>
           <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)' }} />
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span style={{ color: 'var(--color-secondary)', fontSize: '16px' }}>🌀</span>
+            <span style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center' }}><Sparkles size={16} /></span>
             <strong style={{ color: 'var(--color-text)' }}>{wishes}</strong>
           </span>
         </div>
@@ -57,7 +58,7 @@ const AccountCard = ({ account }) => {
             {formatPrice(price)}
           </div>
           <div style={{ fontSize: '12px', fontWeight: 600, color: stockColor, display: 'flex', alignItems: 'center', gap: '4px', padding: '4px 8px', background: `color-mix(in srgb, ${stockColor} 12%, transparent)`, borderRadius: 'var(--radius-sm)' }}>
-            {stockLeft === 0 ? '❌ Распродано' : `● ${stockLeft} шт`}
+            {stockLeft === 0 ? <><XCircle size={12} /> Распродано</> : `● ${stockLeft} шт`}
           </div>
         </div>
       </div>

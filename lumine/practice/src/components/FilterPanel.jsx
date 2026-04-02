@@ -3,6 +3,8 @@ const SERVERS = ['Asia', 'Europe', 'America', 'TW/HK/MO'];
 
 const formatNum = (n) => n.toLocaleString('ru-RU');
 
+import { Search, Gem } from 'lucide-react';
+
 const FilterPanel = ({ filters, onChange, onReset }) => {
   const handleDenomToggle = (d) => {
     onChange({ denomination: filters.denomination === d ? '' : d });
@@ -10,15 +12,15 @@ const FilterPanel = ({ filters, onChange, onReset }) => {
 
   return (
     <aside className="filter-panel">
-      <div className="filter-panel-title">
-        <span>🔍</span> Фильтры
+      <div className="filter-panel-title" style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+        <Search size={22} /> Фильтры
       </div>
 
       {/* Поиск */}
       <div className="filter-section">
         <div className="filter-section-title">Поиск</div>
         <div className="search-bar">
-          <span className="search-bar-icon">🔎</span>
+          <span className="search-bar-icon" style={{display: 'flex', alignItems: 'center'}}><Search size={16} /></span>
           <input
             id="search-input"
             className="input"
@@ -32,7 +34,7 @@ const FilterPanel = ({ filters, onChange, onReset }) => {
 
       {/* Номинал (примогемы) */}
       <div className="filter-section">
-        <div className="filter-section-title">💎 Примогемы</div>
+        <div className="filter-section-title" style={{display: 'flex', alignItems: 'center', gap: '6px'}}><Gem size={18} /> Примогемы</div>
         <div className="filter-chips">
           {DENOMINATIONS.map((d) => (
             <button

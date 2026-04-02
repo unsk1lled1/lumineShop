@@ -1,5 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Sparkles, Gem } from 'lucide-react';
 
 const formatUSD = (n) =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n ?? 0);
@@ -11,7 +12,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container">
                 <Link to="/" className="navbar-logo">
-                    <div className="navbar-logo-icon">✦</div>
+                    <div className="navbar-logo-icon" style={{display: 'flex', alignItems: 'center'}}><Sparkles size={24} /></div>
                     Lumine<span>Store</span>
                 </Link>
 
@@ -27,7 +28,7 @@ const Navbar = () => {
                     {user ? (
                         <div className="navbar-user">
                             <Link to="/profile" className="navbar-balance-chip">
-                                <span className="navbar-balance-icon">💎</span>
+                                <span className="navbar-balance-icon" style={{display: 'flex', alignItems: 'center'}}><Gem size={16} /></span>
                                 <span className="navbar-balance-amount">{formatUSD(user.balance)}</span>
                             </Link>
 

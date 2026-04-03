@@ -50,7 +50,7 @@ const seedDB = async () => {
         credentials: fakeCredentials,
         stock: fakeCredentials.length,
         status: 'active',
-        images: ['https://placehold.co/600x400/1e293b/ffffff?text=Genshin+Impact']
+        images: []
       };
     });
 

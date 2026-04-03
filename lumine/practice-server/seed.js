@@ -10,7 +10,7 @@ const SEED_DATA = [
   { denomination: 33500, primogems: 33500, wishes: 120, price: 20, server: 'America', title: 'Аккаунт 33500 примогемов' },
   { denomination: 47000, primogems: 47000, wishes: 168, price: 29, server: 'Europe', title: 'Жирный акк 47000 камней' },
   { denomination: 55000, primogems: 55000, wishes: 196, price: 34, server: 'Asia', title: 'Супер лот 55000 камней' },
-  { denomination: 60000, primogems: 60000, wishes: 215, price: 40, server: 'TW/HK/MO', title: 'КИТ АКАУНТ 60К камней' }
+  { denomination: 60000, primogems: 60000, wishes: 215, price: 40, server: 'TW/HK/MO', title: 'КИТ АККАУНТ 60К камней' }
 ];
 
 const seedDB = async () => {

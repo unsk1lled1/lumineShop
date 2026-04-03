@@ -23,6 +23,14 @@ const AccountDetail = () => {
   const [buying, setBuying] = useState(false);
 
   useEffect(() => {
+    if (account?.title) {
+      document.title = `${account.title} | LumineStore`;
+    } else {
+      document.title = 'Детали лота | LumineStore';
+    }
+  }, [account]);
+
+  useEffect(() => {
     const fetchAccount = async () => {
       try {
         const { data } = await api.get(`/accounts/${id}`);
